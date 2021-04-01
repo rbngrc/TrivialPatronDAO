@@ -1,0 +1,4 @@
+jdbc:mysql://127.0.0.1/dam2_add_p5 root  com.mysql.cj.jdbc.Driver
+false
+false
+INSERT INTO records (nombre, aciertos, fallos, puntuacion) VALUES ('Pop', '3',  '12', '9.0');
