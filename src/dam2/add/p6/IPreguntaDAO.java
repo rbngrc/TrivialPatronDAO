@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 public interface IPreguntaDAO {
 	
-	public ArrayList<Pregunta> getListaPreguntas();
+	public void jugar();
+	public void anadirPreguntas();
+	public ArrayList<Pregunta> importarPreguntas();
 
 }

@@ -14,7 +14,8 @@ public class Menu {
 
 	public void Menu(ResourceBundle rb) throws SQLException {
 		Scanner sc = new Scanner(System.in);
-		Operaciones operacion = new Operaciones();
+		OpsDataBaseDAO operacion = new OpsDataBaseDAO();
+		Ops comunOps = new Ops();
 
 		boolean salir = false;
 		int opcion;
@@ -58,7 +59,7 @@ public class Menu {
 					ConexionBaseDatos.desconectar();
 					break;
 				case 5:
-					operacion.instrucciones();
+					comunOps.instrucciones();
 					break;
 				case 6:
 					salir = true;

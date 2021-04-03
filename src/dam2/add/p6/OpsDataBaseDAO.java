@@ -1,25 +1,19 @@
 package dam2.add.p6;
 
-import java.awt.Desktop;
 import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
-import com.itextpdf.text.PageSize;
-import com.itextpdf.text.Paragraph;
-import com.itextpdf.text.pdf.PdfWriter;
-
 import jxl.Sheet;
 import jxl.Workbook;
 
-public class Operaciones {
-	private static Logger log = Logger.getLogger(Operaciones.class);
+public class OpsDataBaseDAO implements IJugadorDAO, IPreguntaDAO {
+	private static Logger log = Logger.getLogger(OpsDataBaseDAO.class);
 	OperacionesBaseDatos ops = new OperacionesBaseDatos();
+	Ops comunOps = new Ops();
 	String pathPDF = "ficheros/salida.pdf";
 	static int aciertos;
 	static int fallos;
@@ -53,7 +47,7 @@ public class Operaciones {
 		}
 
 		anadirRecord();
-		generarPDF(aciertos, fallos);
+		comunOps.generarPDF(aciertos, fallos);
 
 		listaPreguntas.clear();
 	}
@@ -150,43 +144,6 @@ public class Operaciones {
 
 	}
 
-	public void generarPDF(int aciertos, int fallos) {
-		PropertyConfigurator.configure("./properties/log4j.properties");
-		
-		double puntuacion = (aciertos * 5) - (fallos * 0.5);
-
-		PdfWriter writer = null;
-		com.itextpdf.text.Document documento = new com.itextpdf.text.Document(PageSize.A4, 20, 20, 70, 50);
-
-		try {
-			writer = PdfWriter.getInstance(documento, new FileOutputStream(pathPDF));
-
-			documento.open();
-
-			Paragraph parrafo = new Paragraph();
-			parrafo.add("Su numero de aciertos ha sido " + aciertos);
-			parrafo.add("\nSu numero de fallos ha sido " + fallos);
-			parrafo.add("\nLa puntuacion total es: " + puntuacion);
-			parrafo.add("\nCada acierto suma 5 puntos y los fallos restan 0.5");
-
-			documento.add(parrafo);
-
-			documento.close();
-			writer.close();
-
-			try {
-				File rutaPDF = new File(pathPDF);
-				Desktop.getDesktop().open(rutaPDF);
-			} catch (IOException e) {
-				log.error(e.toString());
-			}
-
-		} catch (Exception e) {
-			log.error(e.toString());
-		}
-
-	}
-
 	public int respuestaCorrecta() {
 		PropertyConfigurator.configure("./properties/log4j.properties");
 		
@@ -244,4 +201,5 @@ public class Operaciones {
 			System.out.println("Tenemos una nueva puntuacion!!");
 		}
 	}
+
 }
