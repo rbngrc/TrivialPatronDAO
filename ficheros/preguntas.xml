@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<juego>
+  <pregunta>
+    <texto>color caballo blanco de santiago</texto>
+    <respuesta1>negro</respuesta1>
+    <respuesta2>gris</respuesta2>
+    <respuesta3>blanco</respuesta3>
+    <correcta>3</correcta>
+  </pregunta>
+  <pregunta>
+    <texto>color caballo negro de santiago</texto>
+    <respuesta1>negro</respuesta1>
+    <respuesta2>gris</respuesta2>
+    <respuesta3>blanco</respuesta3>
+    <correcta>1</correcta>
+  </pregunta>
+  <pregunta>
+    <texto>color caballo gris de santiago</texto>
+    <respuesta1>negro</respuesta1>
+    <respuesta2>gris</respuesta2>
+    <respuesta3>blanco</respuesta3>
+    <correcta>2</correcta>
+  </pregunta>
+  <pregunta>
+    <texto>color caballo azul de santiago</texto>
+    <respuesta1>negro</respuesta1>
+    <respuesta2>azul</respuesta2>
+    <respuesta3>blanco</respuesta3>
+    <correcta>2</correcta>
+  </pregunta>
+  <pregunta>
+    <texto>Color del caballo beige de santiago</texto>
+    <respuesta1>beige</respuesta1>
+    <respuesta2>blanco</respuesta2>
+    <respuesta3>rojo</respuesta3>
+    <correcta>1</correcta>
+  </pregunta>
+</juego>
+
